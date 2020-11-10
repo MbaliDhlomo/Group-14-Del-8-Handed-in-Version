@@ -48,15 +48,19 @@
 
       </div>
     </div>
+    <form action="https://sandbox.payfast.co.za/eng/process" method="post">
+      <input type="hidden" name="merchant_id" value="10020621">
+      <input type="hidden" name="merchant_key" value="gf6mtn4e52ubs">
+      <input type="hidden" name="amount" value="100.00">
+      <input type="hidden" name="item_name" value="Test Product">
+      <input type="submit">
+    </form> 
   </section>
-  <button *ngIf="orderLines.length>0" type="button" class="btn btn-primary btn-lg btn-block"
-    style="position: fixed;
-      bottom: 1rem;
-      height: 3rem;"
-      (click)="checkout()"
-      >Checkout</button>
-</div>
 
+
+
+
+</div>
 
 
 

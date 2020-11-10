@@ -62,12 +62,16 @@ export class ViewOrdersComponent extends PagedListingComponentBase<OrderLineDto>
     pageNumber: number,
     finishedCallback: Function
   ): void {
+
+    
     this.sOrderId = localStorage.getItem('orderId');
     this.iOrderId = parseInt(this.sOrderId);
     this.currentDate = new Date().toISOString().substring(0, 16);
 
     this.sRestaurantId = localStorage.getItem('resId');
     this.iRestaurantId = parseInt(this.sRestaurantId);
+
+    
 
     this._orderService
       .get(this.iOrderId)
@@ -180,6 +184,7 @@ export class ViewOrdersComponent extends PagedListingComponentBase<OrderLineDto>
   }
 
   checkout(){
+
     this.order.orderStatusIdFk = 3;
     this.order.orderDateCompleted = this.currentDate;
 
@@ -203,4 +208,7 @@ export class ViewOrdersComponent extends PagedListingComponentBase<OrderLineDto>
     const detailsUrl: string = `/app/home`;
     this._router.navigate([detailsUrl]);
   }
+
 }
+
+
